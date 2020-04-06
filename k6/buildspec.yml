@@ -1,0 +1,12 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      docker: 18
+  pre_build:
+    commands:
+      - docker pull loadimpact/k6
+  build:
+    commands:
+      - docker run loadimpact/k6 run github.com/loadimpact/k6/samples/http_get.js
