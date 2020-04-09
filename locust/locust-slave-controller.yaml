@@ -20,8 +20,6 @@ spec:
           env:
             - name: LOCUST_MODE
               value: slave
-            - name: LOCUSTFILE_PATH
-              value: /locustfile.py
             - name: LOCUST_OPTS
               value: --web-host=0.0.0.0
             - name: TARGET_URL
