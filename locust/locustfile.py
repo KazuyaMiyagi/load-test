@@ -2,7 +2,7 @@ from locust import HttpLocust, TaskSet, task, between
 
 class WebsiteTasks(TaskSet):
     @task
-    def getGlobalIp(self):
+    def root(self):
         self.client.get("/")
 
 class WebsiteUser(HttpLocust):
