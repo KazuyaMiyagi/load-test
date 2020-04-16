@@ -1,2 +1,4 @@
 *
+!data.py
 !locustfile.py
+!requirements.txt

@@ -23,3 +23,6 @@ services:
       LOCUST_MODE: slave
       LOCUST_MASTER_HOST: locust-master
       LOCUST_MASTER_PORT: 5557
+
+  redis:
+    image: redis:5.0.8-alpine

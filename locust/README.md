@@ -37,9 +37,7 @@ $ sed -i -e "s;\[TARGET_URL\];http://<target_url>;g" *.yaml
 deploy locust cluster
 
 ```
-$ kubectl create -f locust-master-controller.yaml
-$ kubectl create -f locust-slave-controller.yaml
-$ kubectl create -f locust-master-service.yaml
+$ kubectl create -f locust-cluster.yaml
 ```
 
 start proxy
@@ -52,7 +50,42 @@ $ kubectl proxy --port 8001
 open locust dashboard
 
 ```
-$ open http://127.0.0.1:8001/api/v1/namaespaces/default/services/http:locust-master:8089/proxy/
+$ open http://localhost:8001/api/v1/namespaces/default/services/:locust-svc:8089/proxy/
+```
+
+Deploy to Local k8s
+====================================================================================================
+
+create docker image
+
+```
+$ docker build -t local/locust .
+```
+
+edit yaml
+
+```
+$ sed -i -e "s;\[IMAGE\];local/locust;g" *.yaml
+$ sed -i -e "s;\[TARGET_URL\];http://<target_url>;g" *.yaml
+```
+
+deploy locust cluster
+
+```
+$ kubectl create -f locust-cluster.yaml
+```
+
+start proxy
+
+```
+$ kubectl proxy --port 8001
+```
+
+
+open locust dashboard
+
+```
+$ open http://localhost:8001/api/v1/namespaces/default/services/:locust-svc:8089/proxy/
 ```
 
 Deploy to Local
@@ -74,5 +107,5 @@ $ docker-compose up -d
 open locust dashboard
 
 ```
-open http://127.0.0.1:8089
+$ open http://127.0.0.1:8089
 ```

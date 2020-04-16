@@ -2,3 +2,4 @@
 .envrc
 __pycache__
 secrets.json
+data.py
