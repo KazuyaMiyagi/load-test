@@ -28,7 +28,7 @@ spec:
             - name: TARGET_URL
               value: [TARGET_URL]
             - name: LOCUSTFILE_PATH
-              value: /locustfile.py
+              value: /src/locustfile.py
             - name: REDIS_HOST
               value: redis-svc
           ports:
@@ -76,7 +76,7 @@ spec:
             - name: LOCUST_MASTER_PORT
               value: "5557"
             - name: LOCUSTFILE_PATH
-              value: /locustfile.py
+              value: /src/locustfile.py
             - name: REDIS_HOST
               value: redis-svc
 
