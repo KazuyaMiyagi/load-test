@@ -9,6 +9,17 @@ Requirements
 | eksctl  | 0.16.\*  or later | https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html |
 | kubectl | 1.18.\*  or later | https://kubernetes.io/docs/tasks/tools/install-kubectl/                      |
 
+
+Prepare login data
+====================================================================================================
+
+create data.py
+
+```
+$ cp src/data.py.example src/data.py
+$ vim src/data.py
+```
+
 Deploy to EKS
 ====================================================================================================
 
